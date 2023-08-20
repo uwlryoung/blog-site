@@ -1,8 +1,10 @@
+
 <!-- Loop over each object in the projects array -->
+<h1>Posts</h1>
 {{#each posts as |post| }}
-  <div class="card">
+  <div class="card mb-2">
     <div class="card-header">
-      {{post.title}}
+      <h2>{{post.title}}</h2>
     </div>
     <div class="card-body">
       {{!-- <h5 class="card-title">Special title treatment</h5> --}}
@@ -10,7 +12,10 @@
       <a href="/post/{{post.id}}" class="btn btn-primary">Read More</a>
     </div>
     <div class="card-footer text-body-secondary">
-      {{post.user.name}} {{format_date post.dateCreated}}
+      By: {{post.user.name}}
+      <span class="d-block">Date: {{ post.dateCreated}}</span>
     </div>
   </div>
 {{/each}}
+
+{{!-- put in format_date in line 26 --}}
