@@ -25,6 +25,14 @@ Comment.init(
         key: 'id',
       },
     },
+    commentBody: {
+      type: DataTypes.TEXT,
+    },
+    dateCreated: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
