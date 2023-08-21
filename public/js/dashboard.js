@@ -14,7 +14,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to post');
     }
@@ -30,16 +30,18 @@ const delButtonHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
-      alert('Failed to delete project');
+      alert('Failed to delete post');
     }
   }
 };
 
-document
+let newPost = document
   .querySelector('.new-post-form')
-  .addEventListener('submit', newFormHandler);
+  if (newPost){
+    newPost.addEventListener('submit', newFormHandler);
+  }
 
 let postList = document
   .querySelector('.post-list')

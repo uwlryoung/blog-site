@@ -30,14 +30,14 @@ router.get('/posts/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attribuges: ['name'],
+          attributes: ['name'],
         },
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render('homepage', {
+    res.render('post', {
       ...post, 
       loggedIn: req.session.loggedIn
     });
