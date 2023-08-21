@@ -1,29 +1,37 @@
 <div class="card">
-<div class="card">
   <h2 class="card-header">Signup</h2>
   <div class="card-body">
-    <form>
+    <form class="signup-form">
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <label for="name-signup" class="form-label">Username</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
-          id="exampleInputEmail1"
+          id="name-signup"
           aria-describedby="emailHelp"
         />
       </div>
       <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <label for="email-signup" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email-signup"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password-signup" class="form-label">Password</label>
         <input
           type="password"
           class="form-control"
-          id="exampleInputPassword1"
+          id="password-signup"
         />
       </div>
       <button type="submit" class="btn btn-primary">Signup</button>
     </form>
-    <a href="/views/login.handlebars" class="btn btn-primary">Login Instead</a>
+    <a href="/login" class="btn btn-primary">Login Instead</a>
   </div>
 </div>
 
-<script src="./js/login.js"></script>
+<script src="./js/signup.js"></script>

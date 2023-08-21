@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 
     res.render("homepage", {
       posts,
-      title: req.session.title,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -33,6 +33,13 @@ router.get('/posts/:id', async (req, res) => {
           attribuges: ['name'],
         },
       ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('homepage', {
+      ...post, 
+      loggedIn: req.session.loggedIn
     });
   } catch (err) {
     res.status(500).json(err);
@@ -50,15 +57,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     res.render('dashboard', {
       ...user, 
-      logged_in: true
+      loggedIn: true
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     res.redirect('/dashboard');
     return;
   }

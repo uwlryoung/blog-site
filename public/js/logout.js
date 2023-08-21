@@ -4,6 +4,9 @@ const logout = async () => {
     headers: { 'Content-Type': 'application/json' },
   });
 
+  const results = await response.json();
+  console.log(results);
+
   if (response.ok) {
     document.location.replace('/');
   } else {
