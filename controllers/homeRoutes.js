@@ -77,7 +77,6 @@ router.get('/login', (req, res) => {
 router.get('/logout', (req, res) => {
     req.session.destroy(() => {
     res.redirect('login');
-    res.status(404).end();
   });
 });
 

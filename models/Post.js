@@ -30,6 +30,13 @@ Post.init(
         key: 'id',
       },
     },
+    // comments: {
+    //   type: DataTypes.STRING,
+    //   references: {
+    //     model: 'comment',
+    //     key: 'id'
+    //   }
+    // },
   }, 
   {
     sequelize,
