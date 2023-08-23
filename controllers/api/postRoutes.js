@@ -15,28 +15,28 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/:id', async (req, res) => {
-  try {
-    const postData = await Post.findOne({
-      include: [
-        {
-          model: 'comment',
-          foreignKey: commentId
-        }
-      ],
-    });
+// router.post('/:id', async (req, res) => {
+//   try {
+//     const postData = await Post.findOne({
+//       include: [
+//         {
+//           model: 'comment',
+//           foreignKey: commentId
+//         }
+//       ],
+//     });
 
-    const newComment = await Comment.create({
-      ...req.body,
-      postId: req.session.postId,
-    });
+//     const newComment = await Comment.create({
+//       ...req.body,
+//       postId: req.session.postId,
+//     });
 
-    res.status(200).json(newComment);
+//     res.status(200).json(newComment);
 
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 router.delete('/:id', async (req, res) => {
   try {

@@ -1,19 +1,19 @@
 const router = require('express').Router();
 const { Comment, } = require('../../models');
 
-router.post('/:id', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    // const postData = Post.findOne({
-    //   include: [
-    //     {
-    //       model: 'comment',
-    //       foreignKey: 'id'
-    //     }
-    //   ]
-    // })
+    const postData = Post.findOne({
+      include: [
+        {
+          model: 'post',
+          foreignKey: 'id'
+        }
+      ]
+    })
     const newComment = await Comment.create({
       ...req.body,
-      postId: req.session.postId,
+      commentId: req.session.commentId,
     });
 
     res.status(200).json(newComment);

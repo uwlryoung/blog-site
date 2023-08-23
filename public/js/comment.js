@@ -3,6 +3,8 @@ const commentHandler = async (event) => {
 
   const comment = document.querySelector('#add-comment').value.trim();
 
+  console.log(comment);
+  
   if (comment) {
     const response = await fetch('/api/posts/:id', {
       method: 'POST',
