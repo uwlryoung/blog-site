@@ -27,8 +27,8 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = userData.checkPassword(req.body.password); //There originally was an "await" here but VS code said it has no effect here
-
+    const validPassword = userData.checkPassword(req.body.password); 
+    
     if (!validPassword) {
       res
         .status(400)
