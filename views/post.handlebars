@@ -3,15 +3,14 @@
     <h2>{{title}}</h2>
   </div>
   <div class="card-body">
-    {{! <h5 class="card-title">Special title treatment</h5> }}
     <p class="card-text">{{postBody}}</p>
-    {{!-- <a href="/posts/{{post.id}}" class="btn btn-primary">Read More</a> --}}
   </div>
   <div class="card-footer text-body-secondary">
     By:
     {{user.name}}
-    <span class="d-block">Date: {{dateCreated}}</span>
+    <span class="d-block">Date: {{format_date dateCreated}}</span>
   </div>
+  
   <form class="comment-form">
     <div class="form-group m-2">
       <label for="add-comment">Write Comment</label>
@@ -19,4 +18,11 @@
     </div>
     <button type="submit" class="btn btn-primary m-2">Submit</button>
   </form>
-</div>
+  
+  
+  
+  {{#each comments as |comment| }}
+    {{> comment comment}}
+  {{/each}}
+
+  <script src="/js/comment.js"></script>
