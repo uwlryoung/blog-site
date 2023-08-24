@@ -20,7 +20,7 @@ const commentHandler = async (event) => {
     if (response.ok) {
       console.log("Comment successfully added!")
       console.log(commentBody);
-      // document.location.replace('/dashboard');
+      document.location.replace(`/posts/${postId}`);
     } else {
       alert(response.statusText);
     }
