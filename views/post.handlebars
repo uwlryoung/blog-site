@@ -3,21 +3,22 @@
     <h2>{{title}}</h2>
   </div>
   <div class="card-body">
-    {{! <h5 class="card-title">Special title treatment</h5> }}
     <p class="card-text">{{postBody}}</p>
-    {{!-- <a href="/posts/{{post.id}}" class="btn btn-primary">Read More</a> --}}
   </div>
   <div class="card-footer text-body-secondary">
     By:
     {{user.name}}
     <span class="d-block">Date: {{dateCreated}}</span>
   </div>
+  
   {{> comment}}
-  {{!-- <form class="comment-form">
-    <div class="form-group m-2">
-      <label for="add-comment">Write Comment</label>
-      <input type="text" class="form-control" id="add-comment" />
-    </div>
-    <button type="submit" class="btn btn-primary m-2">Submit</button>
-  </form>
-</div> --}}
+  
+  <div class="card mb-2">
+  <div class="card-body">
+    <p class="card-text">{{comment.commentBody}}</p>
+  </div>
+  <div class="card-footer text-body-secondary">
+    By:
+    {{comment.user.name}}
+    <span class="d-block">Date: {{comment.dateCreated}}</span>
+  </div>

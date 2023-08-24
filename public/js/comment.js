@@ -6,7 +6,7 @@ const commentHandler = async (event) => {
   console.log(comment);
   
   if (comment) {
-    const response = await fetch('/api/posts/:id', {
+    const response = await fetch('/api/comments/', {
       method: 'POST',
       body: JSON.stringify({ comment }),
       headers: { 'Content-Type': 'application/json' },
@@ -17,6 +17,7 @@ const commentHandler = async (event) => {
     
     if (response.ok) {
       console.log("Comment successfully added!")
+      console.log(comment);
       // document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
@@ -27,7 +28,7 @@ const commentHandler = async (event) => {
 let commentForm = document
   .querySelector('.comment-form')
   if (commentForm){
-    signupForm.addEventListener('submit', commentHandler);
+    commentForm.addEventListener('submit', commentHandler);
   }
 
 
