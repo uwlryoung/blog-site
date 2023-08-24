@@ -1,14 +1,16 @@
 const commentHandler = async (event) => {
   event.preventDefault();
 
-  const comment = document.querySelector('#add-comment').value.trim();
+  const commentBody = document.querySelector('#add-comment').value.trim();
+  const urlArray = location.href.split('/'); 
+  const postId = urlArray[urlArray.length - 1]
 
-  console.log(comment);
+  console.log(commentBody);
   
-  if (comment) {
+  if (commentBody && postId) {
     const response = await fetch('/api/comments/', {
       method: 'POST',
-      body: JSON.stringify({ comment }),
+      body: JSON.stringify({ commentBody, postId }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -17,7 +19,7 @@ const commentHandler = async (event) => {
     
     if (response.ok) {
       console.log("Comment successfully added!")
-      console.log(comment);
+      console.log(commentBody);
       // document.location.replace('/dashboard');
     } else {
       alert(response.statusText);

@@ -1,20 +1,10 @@
- <form class="comment-form">
-    <div class="form-group m-2">
-      <label for="add-comment">Write Comment</label>
-      <input type="text" class="form-control" id="add-comment" />
-    </div>
-    <button type="submit" class="btn btn-primary m-2">Submit</button>
-  </form>
-</div>
-
-{{!-- <div class="card mb-2">
+<div class="card mb-2">
   <div class="card-body">
-    <p class="card-text">{{comment.commentBody}}</p>
+    <p class="card-text">{{commentBody}}</p>
   </div>
   <div class="card-footer text-body-secondary">
     By:
-    {{comment.user.name}}
-    <span class="d-block">Date: {{comment.dateCreated}}</span>
-  </div> --}}
-
-<script src="/js/comment.js"></script>
+    {{user.name}}
+    <span class="d-block">Date: {{format_date dateCreated}}</span>
+  </div>
+</div>

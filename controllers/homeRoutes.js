@@ -20,6 +20,7 @@ router.get("/", async (req, res) => {
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -32,10 +33,13 @@ router.get('/posts/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-        // {
-        //   model: Comment,
-        //   attributes: ['commentBody'],
-        // }
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ['name']
+          }
+        }
       ],
     });
 
@@ -46,6 +50,7 @@ router.get('/posts/:id', async (req, res) => {
       loggedIn: req.session.loggedIn
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });

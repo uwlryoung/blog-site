@@ -7,12 +7,13 @@ Comment.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     userId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
@@ -20,6 +21,7 @@ Comment.init(
     },
     postId: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       references: {
         model: 'post',
         key: 'id',

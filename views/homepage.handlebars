@@ -11,11 +11,7 @@
       </div>
       <div class="card-footer text-body-secondary">
         By: {{post.user.name}}
-        <span class="d-block">Date: {{post.dateCreated}}</span>
+        <span class="d-block">Date: {{format_date post.dateCreated}}</span>
       </div>
     </div>
   {{/each}}
-
-
-
-{{!-- put in format_date in line 26 --}}
