@@ -2,7 +2,7 @@
 ![License](https://img.shields.io/badge/License-MIT_License-blue.svg)
   
   ## Description
-  A blog website for users to write blog posts and write comments in response to those posts. Although the posts can be about anything, we are encouraging tech-related posts, hence "TechBlog". 
+  A blog website for users to write blog posts and write comments in response to those posts. Although the posts can be about anything, we are encouraging tech-related posts, hence "TechBlog". This application can also be downloaded from github and you can use it as a base for your own blog.
   
   ## Table of Contents 
   - [Description](#description)
@@ -16,7 +16,7 @@
   - [Challenges and Future Improvements](#challenges-and-future-improvements)
 
   ## Installation
-  No need to install, you can directly visit the site [here](putsitehere). If you would like to get access to the code, clone or fork the repository from github (see below). 
+  No need to install, you can directly visit the site [here](https://cms-tech-blog-1-7f60cfc438f7.herokuapp.com/). If you would like to get access to the code, clone or fork the repository from [github](https://github.com/uwlryoung/blog-site). 
 
   ## Usage
   There are three parts of the website: 
@@ -75,4 +75,6 @@
   - A way to sort the posts (such as by date, by user, etc)
   - A way for users to delete their own account
   - A way to reply directly to comments
+  - A way for users to upload photos
+  - Make the create post box bigger. 
   
