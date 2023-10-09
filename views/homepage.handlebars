@@ -1,4 +1,7 @@
 <h1 class="m-3">Posts</h1>
+  {{#unless posts}}
+    <h3>Looks like there are no posts yet. Be the first to write a blogpost about tech!</h3>
+  {{/unless}}
   {{#each posts as |post| }}
     <div class="card mb-2">
       <div class="card-header">
