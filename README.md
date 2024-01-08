@@ -16,7 +16,7 @@
   - [Challenges and Future Improvements](#challenges-and-future-improvements)
 
   ## Installation
-  No need to install, you can directly visit the site [here](https://cms-tech-blog-1-7f60cfc438f7.herokuapp.com/). If you would like to get access to the code, clone or fork the repository from [github](https://github.com/uwlryoung/blog-site). 
+  No need to install, you can directly visit the site [here](https://vast-reaches-27780-fa2d1eebad1b.herokuapp.com/). If you would like to get access to the code, clone or fork the repository from [github](https://github.com/uwlryoung/blog-site). 
 
   ## Usage
   There are three parts of the website: 
