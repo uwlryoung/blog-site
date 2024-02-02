@@ -12,7 +12,7 @@
     <div class="row mt-4">
       <h3>{{name}}'s Posts:</h3>
       {{#each posts as |post|}}
-        <div class="row mb-2 dashboard-posts">
+        <div class="row mb-2 dashboard-posts align-items-center">
           <div class="col-md-8">
             <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
             <p>{{post.postBody}}</p>
@@ -21,12 +21,13 @@
             <div class="row">
               <button
                 class="btn btn-sm btn-warning m-1"
+                data-id="{{post.id}}"
               >EDIT</button>
               <button
-                class="btn btn-sm btn-danger m-1"
+                class="btn btn-sm btn-danger m-1 post-list"
                 data-id="{{post.id}}"
               >DELETE</button>
-            </dive>
+            </div>
           </div>
         </div>
       {{/each}}
