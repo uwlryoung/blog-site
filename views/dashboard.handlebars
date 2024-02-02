@@ -1,62 +1,63 @@
 <div class="row">
   <div class="col-auto">
     <h2 class="ms-3">Welcome, {{name}}!</h2>
+    <div class="form-group">
+      <button type="button" class="btn btn-primary ms-5">Create Post</button>
+    </div>
   </div>
 </div>
 
-  {{#if posts.length}}
-    <div class="container">
-      <div class="row mt-4">
-        <div class="col-md-6 post-list">
-          <h3>{{name}}'s Posts:</h3>
-          {{#each posts as |post|}}
-            <div class="row mb-2">
-              <div class="col-md-8">
-                <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
-              </div>
-              <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
-              </div>
-            </div>
-          {{/each}}
+{{#if posts.length}}
+  <div class="container">
+    <div class="row mt-4">
+      <h3>{{name}}'s Posts:</h3>
+      {{#each posts as |post|}}
+        <div class="row mb-2 dashboard-posts">
+          <div class="col-md-8">
+            <h4><a href="/posts/{{post.id}}">{{post.title}}</a></h4>
+            <p>{{post.postBody}}</p>
+          </div>
+          <div class="col-md-4">
+            <div class="row">
+              <button
+                class="btn btn-sm btn-warning m-1"
+              >EDIT</button>
+              <button
+                class="btn btn-sm btn-danger m-1"
+                data-id="{{post.id}}"
+              >DELETE</button>
+            </dive>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h3>Create a New Post:</h3>
+      {{/each}}
+      <div class="col-md-6">
 
-          <form class="form new-post-form">
-            <div class="form-group m-2">
-              <label for="post-title">Post Title:</label>
-              <input class="form-input" type="text" id="post-title" name="post-title" />
-            </div>
-            <div class="form-group m-2">
-              <label for="post-body">Post:</label>
-              <textarea class="form-input" id="post-body" name="post-body"></textarea>
-            </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">Create</button>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
-    {{else}}
-    <div class="col-md-6 ms-3 mb-3">
-      <h3>Create a New Post:</h3>
+  </div>
+{{else}}
+  <div class="col-md-6 ms-3 mb-3">
+    <h3>Create a New Post:</h3>
 
-      <form class="form new-post-form">
-        <div class="form-group m-2">
-          <label for="post-title">Post Title:</label>
-          <input class="form-input" type="text" id="post-title" name="post-title" />
-        </div>
-        <div class="form-group m-2">
-          <label for="post-body">Post:</label>
-          <textarea class="form-input" id="post-body" name="post-body"></textarea>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-primary">Create</button>
-        </div>
-      </form>
-    </div>
-  {{/if}}
+    <form class="form new-post-form">
+      <div class="form-group m-2">
+        <label for="post-title">Post Title:</label>
+        <input
+          class="form-input"
+          type="text"
+          id="post-title"
+          name="post-title"
+        />
+      </div>
+      <div class="form-group m-2">
+        <label for="post-body">Post:</label>
+        <textarea class="form-input" id="post-body" name="post-body"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create Post</button>
+      </div>
+    </form>
+  </div>
+{{/if}}
 
 <script src="./js/dashboard.js"></script>
