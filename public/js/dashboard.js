@@ -37,14 +37,14 @@ const delButtonHandler = async (event) => {
   }
 };
 
-let newPost = document
-  .querySelector('.new-post-form')
-  if (newPost){
-    newPost.addEventListener('submit', newFormHandler);
-  }
+let newPost = document.querySelector('.new-post-form')
+if (newPost){
+  newPost.addEventListener('submit', newFormHandler);
+}
 
-let postList = document
-  .querySelector('.post-list')
-  if (postList){
-    postList.addEventListener('click', delButtonHandler);
-  };
+let postList = document.querySelectorAll('.post-list');
+if (postList.length > 0) {
+  postList.forEach((button) => {
+    button.addEventListener('click', delButtonHandler);
+  });
+}

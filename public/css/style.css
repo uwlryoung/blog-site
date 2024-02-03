@@ -1,0 +1,9 @@
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-posts {
+  border: solid 2px #0B5ED7;
+  border-radius: 10px;
+  padding: 5px;
+}

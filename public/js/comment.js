@@ -22,7 +22,7 @@ const commentHandler = async (event) => {
       console.log(commentBody);
       document.location.replace(`/posts/${postId}`);
     } else {
-      alert(response.statusText);
+      alert(response.statusText + "\nPlease login to write a comment");
     }
   }
 };

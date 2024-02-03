@@ -74,6 +74,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+router.get('/create', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.userId, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('create', {
+      ...user,
+      loggedIn: true
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err)
+  }
+});
+
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/dashboard');

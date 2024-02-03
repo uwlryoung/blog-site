@@ -1,7 +1,7 @@
-const router = require('express').Router();
-const { Post } = require('../../models');
+const router = require("express").Router();
+const { Post } = require("../../models");
 
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -15,7 +15,18 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.put("/:id", async (req, res) => {
+  try {
+    const postData = await Post.findOne({
+      where: { id: req.params.id, userId: req.session.userId },
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
@@ -25,7 +36,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!postData) {
-      res.status(404).json({ message: 'No post found with this id!' });
+      res.status(404).json({ message: "No post found with this id!" });
       return;
     }
 
