@@ -2,14 +2,18 @@
 
 <form class="form new-post-form">
   <div class="form-group m-2">
-    <label for="post-title">Post Title:</label>
-    <input class="form-input" type="text" id="post-title" name="post-title" />
+    <h4>Post Title:</h4>
+    <label for="post-title"></label>
+    <input class="form-input ms-4" type="text" id="post-title" name="post-title" style="width: 450px; height: 30px"/>
   </div>
-  <div class="form-group m-2">
-    <label for="post-body">Post:</label>
-    <textarea class="form-input" id="post-body" name="post-body"></textarea>
+  <div class="form-group m-2 w-100">
+    <h4>Post Body:</h4>
+    <label for="post-body"></label>
+    <textarea class="form-input ms-4" id="post-body" name="post-body" rows="10" cols="75"></textarea>
   </div>
   <div class="form-group">
-    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="submit" class="btn btn-primary ms-4">Create</button>
   </div>
 </form>
+
+<script src="./js/dashboard.js"></script>
