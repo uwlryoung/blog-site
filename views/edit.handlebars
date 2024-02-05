@@ -1,0 +1,19 @@
+<h3>Create a New Post:</h3>
+
+<form class="form edit-post-form">
+  <div class="form-group m-2">
+    <h4>Post Title:</h4>
+    <label for="post-title"></label>
+    <input class="form-input ms-4" type="text" id="post-title" name="post-title" value="{{title}}" style="width: 450px; height: 30px"/>
+  </div>
+  <div class="form-group m-2 w-100">
+    <h4>Post Body:</h4>
+    <label for="post-body"></label>
+    <textarea class="form-input ms-4" id="post-body" name="post-body" value={{postBody}} rows="10" cols="75">{{postBody}}</textarea>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary ms-4 edit-post-form">Update</button>
+  </div>
+</form>
+
+<script src="/js/edit-post.js"></script>
