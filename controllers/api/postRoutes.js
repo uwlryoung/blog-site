@@ -17,9 +17,15 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   try {
-    const postData = await Post.findOne({
-      where: { id: req.params.id, userId: req.session.userId },
+    const postData = await Post.update(
+      {
+        title: req.body.title,
+        postBody: req.body.postBody
+      },
+      { 
+        where: { id: req.params.id, userId: req.session.userId },
     });
+    res.status(200).json(postData);
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
