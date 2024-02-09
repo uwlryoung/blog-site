@@ -1,3 +1,4 @@
+// Creates a new post
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,22 +22,11 @@ const newFormHandler = async (event) => {
   }
 };
 
-// TODO: Make an edit Button Handler
-// const editButtonHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-
-//     const response = await fetch(`/api/post/${id}`, {
-//       method: 'PUT',
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/edit');
-//     } else {
-//       alert('Failed to edit post')
-//     }
-//   }
-// }
+// Read, Edit, and Delete Post Handlers
+const editPostHandler = async (event) => {
+  const id = event.target.getAttribute("data-id");
+  document.location.replace(`/posts/${id}/edit`)
+};
 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute("data-id")) {
@@ -59,12 +49,7 @@ if (newPost) {
   newPost.addEventListener("submit", newFormHandler);
 }
 
-const editPostHandler = async (event) => {
-  const id = event.target.getAttribute("data-id");
-  // document.location.href = `/posts/${id}`
-  document.location.replace(`/posts/${id}/edit`)
-};
-
+// Dyamically makes the buttons function to either edit or delete post
 let editPost = document.querySelectorAll(".edit-list");
 if (editPost.length > 0) {
   editPost.forEach((button) => {
@@ -72,17 +57,10 @@ if (editPost.length > 0) {
   });
 }
 
-// //TODO: Make a querySelector / EventListener for editing posts
-// let editList = document.querySelectorAll('.edit-list');
-// if (editList.length > 0) {
-//   editList.forEach((button) => {
-//     button.addEventListener('click', editButtonHandler);
-//   });
-// }
-
 let postList = document.querySelectorAll(".post-list");
 if (postList.length > 0) {
   postList.forEach((button) => {
     button.addEventListener("click", delButtonHandler);
   });
 }
+
