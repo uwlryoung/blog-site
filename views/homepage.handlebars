@@ -8,8 +8,7 @@
         <h2>{{post.title}}</h2>
       </div>
       <div class="card-body">
-        {{!-- <h5 class="card-title">Special title treatment</h5> --}}
-        <p class="card-text">{{post.postBody}}</p>
+        <p class="card-text">{{post_preview post.postBody}}</p>
         <a href="/posts/{{post.id}}" class="btn btn-primary">Read More</a>
       </div>
       <div class="card-footer text-body-secondary">
