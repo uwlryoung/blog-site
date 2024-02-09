@@ -24,17 +24,17 @@
   2) Dashboard
   3) Login/Logout
   
-  Home - This is where you will find all of the posts that have been created by all users. You don't need to be logged in to view these. 
+  Home - This is where you will find all of the posts that have been created by all users. You don't need to be logged in to view these Clicking on "Read More" in the homepage or the post title on your dashboard will bring you to the individual post view where users can leave comments.  
 
   ![homepage](/assets/homepage.png)
   
-  Dashboard - This is where you can access the posts that you have made as well as create posts and delete posts. You must be logged in to view the dashboard. If you aren't, clicking Dashboard will redirect you to the login screen. 
+  Dashboard - This is where you can access the posts that you have made as well as create posts, edit, and delete posts. You must be logged in to view the dashboard. If you aren't, clicking Dashboard will redirect you to the login screen. 
 
   ![dashboard](/assets/dashboard.png)
 
-  - Clicking on "Read More" in either home or your dashboard will bring you to the individual post view where users can leave comments. 
+  ![create-post](/assets/create-post.png)
 
-  ![comment](/assets/Individual-post.png)
+  ![comment](/assets/comment.png)
   
   Login/Logout - This is how you login and logout. If you do not yet have a username, click on "Login" and then click on the button "Sign-up Instead". Then fill in the form to make a new user account. 
 
@@ -70,11 +70,9 @@
 
   ## Challenges and Future Improvements 
   - Having users be able to delete their own comments. 
-  - Having users be able to edit their own posts and comments. 
+  - Having users be able to edit their own comments. 
   - A search function for all of the user's posts. 
   - A way to sort the posts (such as by date, by user, etc)
   - A way for users to delete their own account
   - A way to reply directly to comments
-  - A way for users to upload photos
-  - Make the create post box bigger. 
-  
+  - A way for users to upload photos  

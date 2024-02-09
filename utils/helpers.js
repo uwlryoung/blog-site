@@ -3,6 +3,8 @@ module.exports = {
     // Format date as MM/DD/YYYY
     return date.toLocaleDateString();
   },
+  // For Homepage and Dashboard views, shortens post to create a 
+  // post preview to not clutter the pages
   post_preview: (post) => {
     if (post.length > 150){
       console.log(post.length)
